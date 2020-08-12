@@ -35,8 +35,8 @@
                 <div class="widget-news_item_preview"></div>
             </div>
             <div class="widget-news_item">
+		<div class="widget-news_item_img"></div>
                 <div class="widget-news_item_title"></div>
-                <div class="widget-news_item_img"></div>
                 <div class="widget-news_item_preview"></div>
             </div>
         </div>
