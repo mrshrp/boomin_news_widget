@@ -1,0 +1,31 @@
+{
+  "name": "boomin-news-widget",
+  "version": "2.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "minifyJS": "uglifyjs src/index.js --compress --mangle --warn --output build/d.min.js",
+    "production": "npm run version:bump --silent && rm -f  build/d.min.js && npm run minifyJS --silent && npm run version:add --silent && npm run send",
+    "version:add": "echo \"/*! v - $(npm run version:extract --silent)\n * Build time: $(date '+%m-%d-%Y %H:%M:%S')\n */\n$(cat build/d.min.js)\" >  build/d.min.js",
+    "version:bump": "npm version patch --no-git-tag-version --silent",
+    "version:extract": "cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]'",
+    "send": "node ./scripts/send.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrshrp/boomin_news_widget.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrshrp/boomin_news_widget/issues"
+  },
+  "homepage": "https://github.com/mrshrp/boomin_news_widget#readme",
+  "devDependencies": {
+    "uglify-js": "^3.17.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.186.0",
+    "dotenv": "^16.0.3"
+  }
+}
