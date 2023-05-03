@@ -4,7 +4,7 @@
 
 `<script src="https://storage.boomin.ru/local/news-widget.min.js"></script>`
 
-Необходимо подключить библиотеку [JQuery](https://jquery.com/)
+11111111111Необходимо подключить библиотеку [JQuery](https://jquery.com/)
 
 ```javascript
 // Основной скрипт
